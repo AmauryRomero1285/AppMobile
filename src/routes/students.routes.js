@@ -1,14 +1,8 @@
 //Rutas para los estudiantes
 import { Router } from 'express';
+import studentsController from '../controllers/students.controller.js';
+
 const studentsRoutes = Router();
-studentsRoutes.get('/getOne', (req, res) => {
-    res.json({
-        data: "student"
-    });
-});
-studentsRoutes.post('/', (req, res) => {
-    res.json({
-        data: "Adiós"
-    })
-});
+studentsRoutes.get('/getAll',studentsController.getAll);
+
 export default studentsRoutes;
