@@ -2,6 +2,8 @@
 import express from 'express';//sirve para crear
 import morgan from 'morgan';
 import studentsRoutes from './routes/students.routes.js';
+import teachersRoutes from './routes/teachers.routes.js';
+import classroomRoutes from './routes/classrooms.routes.js'
 const app=express();
 
 //Settings
@@ -14,5 +16,7 @@ app.use(morgan('dev'));//vizualizar las peticiones en consola (saber si llegó o
 
 //Routes
 app.use("/api/students", studentsRoutes);//envia a una ruta para activar el controlador(crea la ruta)[invoca una función]**Es un apuntador**
+app.use("/api/teachers", teachersRoutes);
+app.use("/api/classrooms", classroomRoutes);
 
 export default app;
