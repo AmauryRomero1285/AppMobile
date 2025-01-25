@@ -7,6 +7,6 @@ const studentsRoutes = Router();
 studentsRoutes.get('/getAll',studentsController.getAll);
 studentsRoutes.get('/getOne/:student_id',studentsController.getOne);
 studentsRoutes.post('/insert',studentsController.insert);
-studentsRoutes.post('/updateOne',studentsController.updateOne);
+studentsRoutes.put('/updateOne/:student_id',studentsController.updateOne);
 
 export default studentsRoutes;
