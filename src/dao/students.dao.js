@@ -10,6 +10,9 @@ studentDAO.getOne=async(student_id)=>{
 };
 studentDAO.insert=async(student)=>{
     return await Student.create(student);
-}
+};
+studentDAO.updateOne=async(student_id,student)=>{
+    return await Student.findOneAndUpdate({stundent_id:student_id},student);
+};
 
 export default studentDAO;

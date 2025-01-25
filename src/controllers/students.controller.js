@@ -17,7 +17,7 @@ studentsController.getAll = (req, res) => {
       res.json({
         data: {
           message: error,
-        },
+        }
       });
     });
 };
@@ -45,9 +45,17 @@ studentsController.insert = (req, res) => {
     .catch((error) => {
       res.json({ data: { message: error } })
     });
+};
 
-
-
-}
+studentsController.updateOne=(req,res)=>{
+  studentDAO.updateOne(req.params.students_id,req.body)
+  .then((response=>{
+    res.json({data:{
+      message:"Student updated successfully",
+      response:response
+    }});
+  }))
+  .catch((error=>{res.json({data:{message:error}})}));
+};
 
 export default studentsController;
