@@ -1,5 +1,4 @@
 //Aquí se procesan las peticiones provenientes del routes
-import { response } from "express";
 import studentDAO from "../dao/students.dao.js";
 
 const studentsController = {};
@@ -52,12 +51,29 @@ studentsController.updateOne = (req, res) => {
       res.json({
         data: {
           message: "Student updated successfully",
-          response: response,
+          student: response,
         },
       });
     })
     .catch((error) => {
       res.json({ data: { message: error } });
+    });
+};
+studentsController.deleteOne = (req, res) => {
+  studentDAO
+    .deleteOne(req.params.student_id)
+    .then((response) => {
+      res.json({
+        data: {
+          message: "Student deleted successfully",
+          student: response,
+        },
+      });
+    })
+    .catch((error) => {
+      data: {
+        message: error;
+      }
     });
 };
 
