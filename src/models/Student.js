@@ -1,6 +1,6 @@
 import {model,Schema} from 'mongoose';
 const studentsSchema=new Schema({
-    student_id:{
+    stundent_id:{
         unique:true,
         require:true,
         type:Number
