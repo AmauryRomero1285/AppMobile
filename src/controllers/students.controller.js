@@ -7,10 +7,12 @@ studentsController.getAll = (req, res) => {
   studentDAO
     .getAll()
     .then((students) => {
-      res.json({
+      console.log(students);
+     /* res.json({
         //Aqui se le pide a DAO los datos de los estudiantes
         data: students,
-      });
+      });*/
+       res.render('../src/views/index.ejs');//guia la renderización a la carpeta
     })
     .catch((error) => {
       res.json({
