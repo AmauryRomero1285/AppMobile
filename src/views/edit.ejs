@@ -25,42 +25,27 @@
         </div>
         
         <div role="content" class="ui-content">
-            <form action="/api/students/insert" method="POST">
+            <form action="/api/students/updateOne/<%=student.stundent_id%>" method="POST">
                 <label for="studentID"><h4>Matricula:</h4></label>
-                <input type="number" name="stundent_id" id="studentID">
+                <input type="number" name="stundent_id" id="studentID" value="<%=student.stundent_id%>">
 
                 <label for="txtStudentName"><h4>Nombre:</h4></label>
-                <input type="text" name="name" id="txtStudentName">
+                <input type="text" name="name" id="txtStudentName" value="<%=student.name%>">
 
                 <label for="txtStudentLastname"><h4>Apellido:</h4></label>
-                <input type="text" name="lastname" id="txtStudentLastname">
+                <input type="text" name="lastname" id="txtStudentLastname" value="<%=student.lastname%>">
 
                 <label for="txtStudentGrade"><h4>Grado:</h4></label>
-                <input type="text" name="grade" id="txtStudentGrade">
+                <input type="text" name="grade" id="txtStudentGrade" value="<%=student.grade%>">
 
                 <label for="txtStudentGroup"><h4>Grupo:</h4></label>
-                <input type="text" name="group" id="txtStudentGroup">
+                <input type="text" name="group" id="txtStudentGroup" value="<%=student.group%>">
 
                 <label for="studentAverage"><h4>Promedio:</h4></label>
-                <input type="number" name="average" id="studentAverage">
+                <input type="text" name="average" id="studentAverage" value="<%=student.average%>">
 
-                <button class="ui-btn ui-btn-inline">Guardar</button>
+                <button class="ui-btn ui-btn-inline">Actualizar</button>
             </form>
-            <ul data-role="listview" data-filter="true" data-filter-placeholder="Students" data-insert="true">
-                <%student.forEach((student)=>{%>
-                    <div data-role="collapsible" data-content-theme="false">
-                        <h2><%=student.name%></h2>
-                        <p>Matricula: <%=student.stundent_id%></p>
-                        <p>Nombre: <%=student.name%></p>
-                        <p>Apellido: <%=student.lastname%></p>
-                        <p>Grado: <%=student.grade%></p>
-                        <p>Grupo: <%=student.group%></p>
-                        <p>Promedio: <%=student.average%></p>
-                        <a href="/api/students/getOne/<%=student.stundent_id%>" class="ui-btn ui-mini">Editar</a>
-                        <a href="/api/sudents/deleteOne/<%=student.stundent_id%>" class="ui-btn ui-mini">Borrar</a>
-                    </div>
-                <% }) %>
-            </ul>
         </div>
 
         <div data-role="footer" style="overflow: hidden;">
