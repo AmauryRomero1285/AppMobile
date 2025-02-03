@@ -58,7 +58,7 @@ studentsController.updateOne = (req, res) => {
           student: response,
         },
       });*/
-      res.redirect('api/students/getAll');
+      res.redirect('/api/students/getAll');
     })
     .catch((error) => {
       res.json({ data: { message: error } });
