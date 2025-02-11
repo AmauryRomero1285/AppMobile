@@ -4,7 +4,8 @@ import morgan from 'morgan';
 import ejs from 'ejs';
 import studentsRoutes from './routes/students.routes.js';
 import teachersRoutes from './routes/teachers.routes.js';
-import classroomRoutes from './routes/classrooms.routes.js'
+import classroomRoutes from './routes/classrooms.routes.js';
+import cors from 'cors';
 const app=express();
 
 //Settings
@@ -15,6 +16,7 @@ app.set('view engine',ejs);//motor de vistas con ejs
 app.use(express.json());//lee los datos json
 app.use(express.urlencoded({extended:true}));//entiende formularios
 app.use(morgan('dev'));//vizualizar las peticiones en consola (saber si llegó o no la petición)**se activa aquí**
+app.use(cors());
 
 //Routes
 app.use("/api/students", studentsRoutes);//envia a una ruta para activar el controlador(crea la ruta)[invoca una función]**Es un apuntador**
